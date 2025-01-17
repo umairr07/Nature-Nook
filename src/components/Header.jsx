@@ -30,6 +30,7 @@ const Header = () => {
       await auth.signOut();
       handleSuccess("Logged Out Successfully!!");
       toggleProfile(!isProfile);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
