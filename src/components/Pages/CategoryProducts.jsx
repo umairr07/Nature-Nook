@@ -25,7 +25,7 @@ const CategoryProducts = () => {
 
   return (
     <div>
-      <div className="w-full max-w-4xl mb-6 lg:px-16 sm:px-4 pt-10">
+      <div className="w-full max-w-4xl mb-6 lg:px-16 sm:px-4 pt-16 py-8">
         <button
           className="flex items-center gap-2 text-gray-600 text-xl"
           onClick={() => navigate("/")}

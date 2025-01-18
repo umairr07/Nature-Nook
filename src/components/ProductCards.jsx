@@ -4,7 +4,7 @@ import { TiPlus } from "react-icons/ti";
 import Cart from "./Pages/Cart.jsx";
 import { CartContext } from "../context/CartContext.jsx";
 import { handleError, handleSuccess } from "../utils/Toast.jsx";
-import { data } from "../data/data.js";
+import { bestSellers, data, newArrivals } from "../data/data.js";
 import { UserContext } from "../context/UserContext.jsx";
 
 const listItems = [
@@ -35,8 +35,8 @@ const listItems = [
 ];
 
 const ProductCards = () => {
-  const [originalData] = useState(data); // Storing the original data
-  const [productData, setProductData] = useState(data); // Storing the data to be displayed
+  const combinedProducts = [...data, ...newArrivals, ...bestSellers];
+  const [productData, setProductData] = useState(combinedProducts);
   const [inputValue, setInputValue] = useState("");
   const route = useLocation();
   const navigate = useNavigate();
@@ -57,9 +57,9 @@ const ProductCards = () => {
 
   const sortByCategory = (name) => {
     if (name === "All") {
-      setProductData(originalData); // Show all products when "All" is selected
+      setProductData(combinedProducts);
     } else {
-      const filteredData = originalData.filter(
+      const filteredData = combinedProducts.filter(
         (item) => item.category === name
       );
       setProductData(filteredData);
@@ -69,17 +69,16 @@ const ProductCards = () => {
 
   const handleSearch = (e) => {
     const value = e.target.value;
-    setInputValue(value); // Update input value state
+    setInputValue(value);
 
-    // Filter product data
-    const filteredProducts = originalData.filter((item) =>
+    const filteredProducts = combinedProducts.filter((item) =>
       item.name.toLowerCase().includes(value.toLowerCase())
     );
     setProductData(filteredProducts);
   };
 
   const sortByPrice = (order) => {
-    let sortedData = [...productData]; // Create a copy of the current product data
+    let sortedData = [...productData];
 
     if (order === "lowToHigh") {
       sortedData.sort((a, b) => a.discountedPrice - b.discountedPrice);
@@ -87,8 +86,8 @@ const ProductCards = () => {
       sortedData.sort((a, b) => b.discountedPrice - a.discountedPrice);
     }
 
-    setProductData(sortedData); // Update the displayed product data
-    setIsPriceOpen(false); // Close the dropdown after sorting
+    setProductData(sortedData);
+    setIsPriceOpen(false);
   };
 
   return (

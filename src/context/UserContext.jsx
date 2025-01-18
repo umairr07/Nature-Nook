@@ -9,7 +9,7 @@ export const UserContextProvider = ({ children }) => {
 
   const fetchUser = async () => {
     auth.onAuthStateChanged(async (user) => {
-      console.log(user);
+      // console.log(user);
       const docRef = doc(db, "Users", user.uid);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
