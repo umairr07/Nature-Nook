@@ -10,7 +10,7 @@ const HomeComponents = () => {
   return (
     <div>
       <Home />
-      {/* <Products /> */}
+      <Products />
       <ProductCards />
       <TrendingProducts />
       <BestSeller />

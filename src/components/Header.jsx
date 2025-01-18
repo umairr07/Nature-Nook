@@ -1,9 +1,8 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navlinks from "./Navlinks";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
-import johnImage from "../images/johndoe.jpg";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { handleSuccess } from "../utils/Toast";
 import logo from "../images/Logo/wmremove-transformed.png";
@@ -12,7 +11,6 @@ import { auth } from "../firebase/firebase";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProfile, setIsProfile] = useState(false);
-  const naviagte = useNavigate();
   const location = useLocation();
 
   const { user } = useContext(UserContext);
@@ -111,7 +109,7 @@ const Header = () => {
         <div className="fixed top-0 right-0 h-screen w-56 bg-white-400 shadow-xl flex flex-col justify-start items-start py-5 z-50">
           <button
             className="ml-auto mr-4 mt-4 text-gray-500 hover:text-red-500"
-            onClick={() => setIsOpen(false)} // Add a close button
+            onClick={() => setIsOpen(false)}
           >
             <BiX size={30} />
           </button>
