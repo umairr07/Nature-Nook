@@ -29,10 +29,13 @@ Welcome to **Nature Nook** – an e-commerce platform that delivers high-quality
 
   - Business information and a user-friendly form for inquiries.
 
-- **Authentication 🔒:**
-  - **Secure Login/Signup** using Firebase Authentication.
-  - **Session Persistence** for a smooth and secure user experience.
-  - User authentication for personalized experiences.
+## Authentication 🔒 (Work in Progress)  
+
+- Implementing **Secure Login/Signup** using **Node.js, Express, and MongoDB**.  
+- Adding **JWT-based Authentication** for secure access control.  
+- Setting up **Session Persistence** for a smooth and secure user experience.  
+- Enhancing user authentication with necessary security measures like **password hashing and validation**.  
+
 
 ---
 
