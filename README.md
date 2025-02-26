@@ -29,10 +29,13 @@ Welcome to **Nature Nook** – an e-commerce platform that delivers high-quality
 
   - Business information and a user-friendly form for inquiries.
 
-- **Authentication 🔒:**
-  - **Secure Login/Signup** using Firebase Authentication.
-  - **Session Persistence** for a smooth and secure user experience.
-  - User authentication for personalized experiences.
+## Authentication 🔒 (Work in Progress)  
+
+- Implementing **Secure Login/Signup** using **Node.js, Express, and MongoDB**.  
+- Adding **JWT-based Authentication** for secure access control.  
+- Setting up **Session Persistence** for a smooth and secure user experience.  
+- Enhancing user authentication with necessary security measures like **password hashing and validation**.  
+
 
 ---
 
@@ -51,22 +54,6 @@ Welcome to **Nature Nook** – an e-commerce platform that delivers high-quality
 - **ReactJS**: For building an interactive user interface.
 - **Tailwind CSS**: For stunning, responsive designs 🌈.
 - **React Router**: For seamless navigation between pages.
-
-### **Backend**
-
-- **Firebase Authentication**:
-  - Provides a secure authentication system for the app.
-  - Includes Email/Password login functionality.
-
----
-
-## 🔑 Firebase Authentication
-
-- **Firebase** is used to handle user authentication securely.
-- Features include:
-  - Email/Password authentication.
-  - Session management for logged-in users.
-  - Integration with the frontend for seamless user experience.
 
 ---
 
@@ -92,27 +79,8 @@ To run this project locally:
    npm install
    ```
 
-4. **Add Firebase Configuration:**
 
-   - Create a new file `src/firebaseConfig.js` and add your Firebase configuration:
-
-     ```javascript
-     import { initializeApp } from "firebase/app";
-
-     const firebaseConfig = {
-       apiKey: "YOUR_API_KEY",
-       authDomain: "YOUR_AUTH_DOMAIN",
-       projectId: "YOUR_PROJECT_ID",
-       storageBucket: "YOUR_STORAGE_BUCKET",
-       messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-       appId: "YOUR_APP_ID",
-     };
-
-     const app = initializeApp(firebaseConfig);
-     export default app;
-     ```
-
-5. **Start the development server:**
+4. **Start the development server:**
 
    ```bash
    npm run dev
