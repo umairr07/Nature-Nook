@@ -6,7 +6,6 @@ import { UserContext } from "../context/UserContext";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { handleSuccess } from "../utils/Toast";
 import logo from "../images/Logo/wmremove-transformed.png";
-import { auth } from "../firebase/firebase";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,16 +22,7 @@ const Header = () => {
     setIsProfile(!isProfile);
   };
 
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      handleSuccess("Logged Out Successfully!!");
-      toggleProfile(!isProfile);
-      window.location.reload();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleLogout = async () => {};
 
   return (
     <>
@@ -105,19 +95,21 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {isOpen && (
-        <div className="fixed top-0 right-0 h-screen w-56 bg-white-400 shadow-xl flex flex-col justify-start items-start py-5 z-50">
-          <button
-            className="ml-auto mr-4 mt-4 text-gray-500 hover:text-red-500"
-            onClick={() => setIsOpen(false)}
-          >
-            <BiX size={30} />
-          </button>
-          <div className="px-4 w-full">
-            <Navlinks />
-          </div>
+      <div
+        className={`fixed top-0 right-0 h-screen w-56 bg-white-400 shadow-xl flex flex-col justify-start items-start py-5 z-50 transition-transform duration-300 ${
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+        }`}
+      >
+        <button
+          className="ml-auto mr-4 mt-4 text-gray-500 hover:text-red-500"
+          onClick={() => setIsOpen(false)}
+        >
+          <BiX size={30} />
+        </button>
+        <div className="px-4 w-full" onClick={() => setIsOpen(false)}>
+          <Navlinks />
         </div>
-      )}
+      </div>
     </>
   );
 };

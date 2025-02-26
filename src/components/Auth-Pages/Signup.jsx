@@ -1,35 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { handleSuccess } from "../../utils/Toast";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../../firebase/firebase";
-import { setDoc, doc } from "firebase/firestore";
 
 const Signup = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-      console.log(user);
-
-      if (user) {
-        await setDoc(doc(db, "Users", user.uid), {
-          name: name,
-          email: user.email,
-        });
-      }
-      handleSuccess("Registration Successfull!!, Login to continue");
-      navigate("/login");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const handleSignup = async () => {};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-50 flex items-center justify-center">

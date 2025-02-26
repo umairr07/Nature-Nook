@@ -1,24 +1,12 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../firebase/firebase";
-import { handleSuccess } from "../../utils/Toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      handleSuccess("Logged in Successfull!!");
-      navigate("/");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const handleLogin = async () => {};
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-50 flex items-center justify-center">
       <div className="bg-white-400 shadow-lg rounded-lg p-8 lg:w-full md:w-full  sm:w-[85%] max-w-md">

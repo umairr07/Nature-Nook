@@ -24,8 +24,8 @@ const Navlinks = () => {
 
   return (
     <div>
-      <ul className="lg:flex lg:flex-row lg:justify-around lg:items-center lg:gap-14 md:flex md:flex-row md:justify-around md:items-center md:gap-10 sm:flex sm:flex-col sm:flex-wrap sm:gap-5 text-gray-700">
-        {lists.map((item, idx) => {
+      <ul className="lg:flex lg:flex-row lg:justify-around lg:items-center lg:gap-14 md:flex md:flex-row md:justify-around md:items-center md:gap-10 sm:flex sm:flex-col sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 text-gray-700">
+        {lists.map((item) => {
           return location.pathname === item.path ? (
             <Link
               to={item.path}
