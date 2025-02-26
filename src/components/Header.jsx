@@ -56,7 +56,7 @@ const Header = () => {
                     />
                   </Link>
                 )}
-                <div className="relative">
+                {/* <div className="relative">
                   <p
                     onClick={toggleProfile}
                     className="cursor-pointer flex items-center justify-center w-8 h-8 rounded-full bg-green-400 text-white-400 text-xl font-semibold uppercase transition-all duration-200 ease-in-out hover:bg-green-600"
@@ -74,7 +74,7 @@ const Header = () => {
                       </li>
                     </ul>
                   )}
-                </div>
+                </div> */}
               </div>
             ) : (
               <div className="flex gap-3">
