@@ -55,22 +55,6 @@ Welcome to **Nature Nook** – an e-commerce platform that delivers high-quality
 - **Tailwind CSS**: For stunning, responsive designs 🌈.
 - **React Router**: For seamless navigation between pages.
 
-### **Backend**
-
-- **Firebase Authentication**:
-  - Provides a secure authentication system for the app.
-  - Includes Email/Password login functionality.
-
----
-
-## 🔑 Firebase Authentication
-
-- **Firebase** is used to handle user authentication securely.
-- Features include:
-  - Email/Password authentication.
-  - Session management for logged-in users.
-  - Integration with the frontend for seamless user experience.
-
 ---
 
 ## 🛠️ Getting Started
@@ -95,27 +79,8 @@ To run this project locally:
    npm install
    ```
 
-4. **Add Firebase Configuration:**
 
-   - Create a new file `src/firebaseConfig.js` and add your Firebase configuration:
-
-     ```javascript
-     import { initializeApp } from "firebase/app";
-
-     const firebaseConfig = {
-       apiKey: "YOUR_API_KEY",
-       authDomain: "YOUR_AUTH_DOMAIN",
-       projectId: "YOUR_PROJECT_ID",
-       storageBucket: "YOUR_STORAGE_BUCKET",
-       messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-       appId: "YOUR_APP_ID",
-     };
-
-     const app = initializeApp(firebaseConfig);
-     export default app;
-     ```
-
-5. **Start the development server:**
+4. **Start the development server:**
 
    ```bash
    npm run dev
