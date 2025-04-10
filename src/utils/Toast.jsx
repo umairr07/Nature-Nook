@@ -1,17 +1,9 @@
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export const handleSuccess = (message) => {
-  toast.success(message, {
-    position: "bottom-right",
-    autoClose: 2000,
-    theme: "colored",
-  });
+  toast.success(message);
 };
 
 export const handleError = (message) => {
-  toast.error(message, {
-    position: "bottom-right",
-    autoClose: 2000,
-    theme: "colored",
-  });
+  toast.error(message);
 };

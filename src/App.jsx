@@ -19,7 +19,7 @@ import { UserContextProvider } from "./context/UserContext";
 import AboutUs from "./components/Pages/AboutUs";
 import { CartProvider } from "./context/CartContext";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import CheckoutPage from "./components/Pages/CheckoutPage";
 import TransactionSuccessPage from "./components/Pages/TransactionSuccessPage";
 import ScrollToTop from "./utils/ScrollToTop";
@@ -84,7 +84,23 @@ const App = () => {
           {!hideHeaderFooter.includes(location.pathname) && <Footer />}
         </CartProvider>
       </UserContextProvider>
-      <ToastContainer />
+      <Toaster
+        toastOptions={{
+          className: "",
+          success: {
+            style: {
+              background: "#4ade80", // green-400
+              color: "#fff",
+            },
+          },
+          error: {
+            style: {
+              background: "#f87171", // red-400
+              color: "#fff",
+            },
+          },
+        }}
+      />
     </div>
   );
 };

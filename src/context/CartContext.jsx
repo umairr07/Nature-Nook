@@ -1,13 +1,24 @@
-import { createContext, useContext, useState } from "react";
-import { UserContext } from "./UserContext";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  const [count, setCount] = useState(0);
 
-  const { user } = useContext(UserContext);
+  // Load cart items from localStorage if available
+  useEffect(() => {
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      setCartItems(JSON.parse(storedCartItems));
+    }
+  }, []);
+
+  // Update localStorage whenever cartItems state changes
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems((prev) => {
@@ -37,9 +48,11 @@ export const CartProvider = ({ children }) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const emptyCartItems = (item) => {
+  const emptyCartItems = () => {
     setCartItems([]);
   };
+
+  const cartCount = cartItems.length;
 
   return (
     <CartContext.Provider
@@ -49,6 +62,7 @@ export const CartProvider = ({ children }) => {
         updateCartItems,
         removeFromCart,
         emptyCartItems,
+        cartCount,
       }}
     >
       {children}
