@@ -28,7 +28,7 @@ const CheckoutPage = () => {
     );
 
     const data = await res.json();
-    console.log("Stripe session response:", data); // 👈 What does this show?
+    console.log("Stripe session response:", data);
 
     if (data.id) {
       const result = await stripe.redirectToCheckout({ sessionId: data.id });
