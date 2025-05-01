@@ -16,13 +16,16 @@ const CheckoutPage = () => {
   const handlePurchase = async () => {
     const stripe = await stripePromise;
 
-    const res = await fetch("http://localhost:5000/api/v1/order/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ cartItems }),
-    });
+    const res = await fetch(
+      "https://nature-nook-backend.onrender.com/api/v1/order/checkout",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cartItems }),
+      }
+    );
 
     const data = await res.json();
     console.log("Stripe session response:", data); // 👈 What does this show?
