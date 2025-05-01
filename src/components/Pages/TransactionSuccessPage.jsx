@@ -1,9 +1,14 @@
-import React from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const TransactionSuccessPage = () => {
   const navigate = useNavigate();
+  const { emptyCartItems } = useContext(CartContext);
 
+  useEffect(() => {
+    emptyCartItems();
+  }, []);
   const handleGoHome = () => {
     navigate("/");
   };

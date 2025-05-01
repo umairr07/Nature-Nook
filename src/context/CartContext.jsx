@@ -50,6 +50,7 @@ export const CartProvider = ({ children }) => {
 
   const emptyCartItems = () => {
     setCartItems([]);
+    localStorage.removeItem("cartItems");
   };
 
   const cartCount = cartItems.length;

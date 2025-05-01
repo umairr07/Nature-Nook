@@ -26,6 +26,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 import Profile from "./components/My Profile/Profile";
 import Settings from "./components/Settings";
 import NotFound from "./components/Pages/NotFound/NotFound";
+import CancelPage from "./components/Pages/CancelPage";
 
 const App = () => {
   const location = useLocation();
@@ -76,6 +77,8 @@ const App = () => {
               <Route path="/myprofile" element={<Profile />} />
               {/* Settings */}
               <Route path="/settings" element={<Settings />} />
+              {/* Cancel */}
+              <Route path="/cancel" element={<CancelPage />} />
               {/* Not Found */}
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -87,18 +90,6 @@ const App = () => {
       <Toaster
         toastOptions={{
           className: "",
-          success: {
-            style: {
-              background: "#4ade80", // green-400
-              color: "#fff",
-            },
-          },
-          error: {
-            style: {
-              background: "#f87171", // red-400
-              color: "#fff",
-            },
-          },
         }}
       />
     </div>
