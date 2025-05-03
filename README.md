@@ -29,13 +29,23 @@ Welcome to **Nature Nook** – an e-commerce platform that delivers high-quality
 
   - Business information and a user-friendly form for inquiries.
 
-## Authentication 🔒 (Work in Progress)  
+---
 
-- Implementing **Secure Login/Signup** using **Node.js, Express, and MongoDB**.  
-- Adding **JWT-based Authentication** for secure access control.  
-- Setting up **Session Persistence** for a smooth and secure user experience.  
-- Enhancing user authentication with necessary security measures like **password hashing and validation**.  
+## 🔒 Authentication (Powered by Clerk)
 
+- **Clerk Integration** for secure and seamless user authentication.
+- Supports **Sign up, Sign in, and Sign out** with email/password or social login providers.
+- Built-in **session management and user profile handling**.
+- Easily extendable for role-based access and protected routes.
+
+---
+
+## 💳 Payment Integration (Powered by Stripe)
+
+- **Stripe Checkout** for secure, reliable payments.
+- Customers can pay using cards and other supported payment methods.
+- Real-time **transaction processing and success/failure feedback**.
+- Scalable setup to support future subscriptions or recurring payments.
 
 ---
 
@@ -54,6 +64,8 @@ Welcome to **Nature Nook** – an e-commerce platform that delivers high-quality
 - **ReactJS**: For building an interactive user interface.
 - **Tailwind CSS**: For stunning, responsive designs 🌈.
 - **React Router**: For seamless navigation between pages.
+- **Clerk**: For secure and scalable authentication.
+- **Stripe**: For smooth payment processing.
 
 ---
 
@@ -65,7 +77,7 @@ To run this project locally:
 
    ```bash
    git clone https://github.com/umairr07/Nature-Nook.git
-   ```
+
 
 2. **Navigate to the project directory:**
 
