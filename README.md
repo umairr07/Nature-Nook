@@ -100,6 +100,21 @@ To run this project locally:
 
 ---
 
+## 🔧 Environment Setup
+Create a .env.local file in the root directory and add the following:
+```bash
+# Clerk
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+# Stripe
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
+Replace your_* with the actual keys from your Clerk and Stripe dashboards.
+
+
+
 ### 📬 Contact
 
 For any inquiries or feedback, feel free to reach out via the contact form or email at:
