@@ -5,7 +5,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  // Load cart items from localStorage if available
+  // Load cart items from localStorage if is available
   useEffect(() => {
     const storedCartItems = localStorage.getItem("cartItems");
     if (storedCartItems) {
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
       // Add new product to the cart
@@ -39,8 +39,8 @@ export const CartProvider = ({ children }) => {
   const updateCartItems = (id, quantity) => {
     setCartItems((prevCartItems) =>
       prevCartItems.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      )
+        item.id === id ? { ...item, quantity } : item,
+      ),
     );
   };
 
